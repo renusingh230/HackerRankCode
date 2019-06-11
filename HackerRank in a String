@@ -1,0 +1,26 @@
+//Determine if a string contains a subsequence of characters that spell "hackerrank".
+
+import java.util.Scanner;
+
+public class HackerRankWordSeries {
+	private static final String data = "HACKERRANK";
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int q = sc.nextInt();
+		for (int i = 1; i <= q; i++) {
+			String s = sc.next();
+			int count = 0;
+			for (int j = 0; j < s.length(); j++) {
+				if (s.toUpperCase().charAt(j) == data.charAt(count)) {
+					count++;
+					if (count == data.length())
+						break;
+				}
+			}
+			System.out.println(count == data.length() ? "YES" : "NO");
+		}
+	}
+
+}
